@@ -33,30 +33,5 @@
     }
   }
 
-  function initSearch() {
-    const input = document.getElementById("note-search");
-    if (!input) return;
-
-    input.addEventListener("input", function () {
-      const q = input.value.trim().toLowerCase();
-      const items = document.querySelectorAll("[data-search]");
-
-      items.forEach(function (el) {
-        const text = (el.getAttribute("data-search") || el.textContent).toLowerCase();
-        const match = !q || text.includes(q);
-        el.classList.toggle("hidden", !match);
-      });
-
-      document.querySelectorAll(".category-card").forEach(function (card) {
-        const visible = card.querySelectorAll(".note-item:not(.hidden)");
-        const hasQuery = q.length > 0;
-        card.classList.toggle("hidden", hasQuery && visible.length === 0);
-      });
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    initTheme();
-    initSearch();
-  });
+  document.addEventListener("DOMContentLoaded", initTheme);
 })();

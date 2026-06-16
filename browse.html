@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浏览 · 我的笔记</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+  <script src="assets/manifest.js" defer></script>
+  <script src="assets/markdown.js" defer></script>
+  <script src="assets/note-builder.js" defer></script>
+  <script src="assets/github-client.js" defer></script>
+  <script src="assets/browse.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">📚 我的笔记</a>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换暗色模式">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-narrow browse-main">
+    <nav class="breadcrumb" id="breadcrumb" aria-label="路径"></nav>
+
+    <header class="browse-header">
+      <h1 id="browse-title">文件夹</h1>
+      <p class="browse-desc" id="browse-desc"></p>
+    </header>
+
+    <div class="browse-toolbar">
+      <button type="button" class="btn-secondary" id="btn-new-folder">📁 新建文件夹</button>
+      <button type="button" class="btn-secondary" id="btn-new-page">📄 新建页面</button>
+      <label class="btn-secondary btn-file">
+        📤 上传文件
+        <input type="file" id="file-upload" accept=".md,.txt,.markdown,.html,text/plain,text/markdown,text/html" hidden>
+      </label>
+      <button type="button" class="btn-ghost" id="btn-github" title="GitHub 同步设置">⚙️</button>
+    </div>
+
+    <ul class="file-list" id="file-list">
+      <li class="file-list-loading">正在加载…</li>
+    </ul>
+
+    <div id="browse-status" class="upload-status" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>托管于 GitHub Pages · 纯静态站点</p>
+  </footer>
+
+  <!-- 新建文件夹 -->
+  <dialog class="site-dialog" id="dialog-folder">
+    <form method="dialog" id="form-folder">
+      <h2>新建文件夹</h2>
+      <label>
+        文件夹名称
+        <input type="text" name="name" required placeholder="例如：日记、2024" autofocus>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" class="btn-ghost" data-close>取消</button>
+        <button type="submit" class="btn-primary">创建</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- 新建页面 -->
+  <dialog class="site-dialog" id="dialog-page">
+    <form method="dialog" id="form-page">
+      <h2>新建页面</h2>
+      <label>
+        页面标题
+        <input type="text" name="title" required placeholder="笔记标题">
+      </label>
+      <label>
+        正文（支持 Markdown）
+        <textarea name="content" rows="10" required placeholder="# 标题&#10;&#10;正文内容…"></textarea>
+      </label>
+      <div class="dialog-actions">
+        <button type="button" class="btn-ghost" data-close>取消</button>
+        <button type="submit" class="btn-primary">创建并上传</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- GitHub 设置 -->
+  <dialog class="site-dialog site-dialog--wide" id="dialog-github">
+    <form method="dialog" id="form-github">
+      <h2>GitHub 同步设置</h2>
+      <p class="form-hint">创建文件夹、页面或上传文件时会推送到 GitHub。Token 仅保存在本机浏览器。</p>
+      <div class="form-row form-row--2">
+        <label>用户名 <input type="text" name="owner" required></label>
+        <label>仓库名 <input type="text" name="repo" required></label>
+      </div>
+      <div class="form-row form-row--2">
+        <label>分支 <input type="text" name="branch" value="main"></label>
+        <label>Token <input type="password" name="token" autocomplete="off"></label>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="btn-secondary" id="btn-test-github">测试连接</button>
+        <button type="button" class="btn-ghost" data-close>关闭</button>
+        <button type="submit" class="btn-primary">保存</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
