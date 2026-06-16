@@ -7,6 +7,12 @@
       "search": "生活 日常 习惯",
       "children": [
         {
+          "type": "folder",
+          "name": "23131231",
+          "slug": "23131231",
+          "children": []
+        },
+        {
           "type": "page",
           "title": "321",
           "slug": "321",
