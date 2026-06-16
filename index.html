@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的笔记</title>
+  <meta name="description" content="个人分类静态笔记 — 生活 / 学术 / 职业">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">📚 我的笔记</a>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="切换暗色模式">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>个人笔记库</h1>
+      <p>生活 · 学术 · 职业 — 随时查阅，多端同步</p>
+    </section>
+
+    <div class="search-box">
+      <input type="search" id="note-search" placeholder="搜索笔记标题或关键词…" autocomplete="off">
+    </div>
+
+    <div class="category-grid">
+      <article class="category-card" data-search="生活 日常 习惯">
+        <h2>🌿 生活</h2>
+        <p class="cat-desc">日常记录、习惯与心得</p>
+        <ul class="note-list">
+          <li class="note-item" data-search="欢迎 开始 使用指南">
+            <a href="notes/life/welcome.html">站点使用指南 <span class="note-date">2026-06-16</span></a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="category-card" data-search="学术 学习 研究">
+        <h2>📖 学术</h2>
+        <p class="cat-desc">课程、论文与学习方法</p>
+        <ul class="note-list">
+          <li class="note-item" data-search="学习方法 费曼 番茄钟">
+            <a href="notes/academic/study-tips.html">高效学习方法整理 <span class="note-date">2026-06-16</span></a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="category-card" data-search="职业 工作 职场">
+        <h2>💼 职业</h2>
+        <p class="cat-desc">技能积累与职业规划</p>
+        <ul class="note-list">
+          <li class="note-item" data-search="简历 面试 求职">
+            <a href="notes/career/resume-notes.html">简历与面试要点 <span class="note-date">2026-06-16</span></a>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="private-hint">🔒 私密笔记不在此列出，请通过书签访问私密区入口。</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>托管于 GitHub Pages · 纯静态站点</p>
+  </footer>
+</body>
+</html>

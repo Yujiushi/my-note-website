@@ -1,0 +1,11 @@
+{
+  "name": "my-note-website",
+  "private": true,
+  "description": "个人分类静态笔记网站",
+  "scripts": {
+    "encrypt:private": "node scripts/encrypt-private.mjs"
+  },
+  "devDependencies": {
+    "staticrypt": "^3.5.0"
+  }
+}
