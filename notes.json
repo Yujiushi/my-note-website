@@ -8,6 +8,13 @@
       "children": [
         {
           "type": "page",
+          "title": "321",
+          "slug": "321",
+          "date": "2026-06-16",
+          "search": "321"
+        },
+        {
+          "type": "page",
           "title": "站点使用指南",
           "slug": "welcome",
           "date": "2026-06-16",
